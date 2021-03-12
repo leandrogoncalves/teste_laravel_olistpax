@@ -49,7 +49,7 @@ class ProductRepository implements ProductRepositoryInterface
      * @param $id
      * @return Model
      */
-    public function findById($id):Model
+    public function findById(int $id):Model
     {
         return $this->model->findOrFail($id);
     }
@@ -59,7 +59,7 @@ class ProductRepository implements ProductRepositoryInterface
      * @param null $id
      * @return Model
      */
-    public function store(array $data, $id = null):Model
+    public function store(array $data, int $id = null):Model
     {
         $model = $this->model;
         if($id){
@@ -70,10 +70,10 @@ class ProductRepository implements ProductRepositoryInterface
     }
 
     /**
-     * @param $id
+     * @param int $id
      * @return bool
      */
-    public function delete($id):bool
+    public function delete(int $id):bool
     {
         $model = $this->findById($id);
         return $model->delete();

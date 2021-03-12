@@ -24,22 +24,22 @@ interface RepositoryInterface
     public function findAllPaginated();
 
     /**
-     * @param $id
+     * @param int $id
      * @return Model
      */
-    public function findById($id):Model;
+    public function findById(int $id):Model;
 
     /**
      * @param array $data
-     * @param null $id
+     * @param int $id
      * @return Model
      */
-    public function store(array $data, $id = null):Model;
+    public function store(array $data, int $id = null):Model;
 
     /**
-     * @param $id
+     * @param int $id
      * @return bool
      */
-    public function delete($id):bool;
+    public function delete(int $id):bool;
 
 }

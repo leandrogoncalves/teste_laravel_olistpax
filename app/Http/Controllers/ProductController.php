@@ -11,15 +11,29 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * Class ProductController
+ * @package App\Http\Controllers
+ */
 class ProductController extends Controller
 {
+    /**
+     * @var ProductRepositoryInterface
+     */
     protected $productRepository;
 
+    /**
+     * ProductController constructor.
+     * @param ProductRepositoryInterface $repository
+     */
     public function __construct(ProductRepositoryInterface $repository)
     {
         $this->productRepository = $repository;
     }
 
+    /**
+     * @return ProductCollection|JsonResponse
+     */
     public function index()
     {
         try {
@@ -34,6 +48,10 @@ class ProductController extends Controller
         }
     }
 
+    /**
+     * @param ProductRequest $request
+     * @return ProductResource|JsonResponse
+     */
     public function store(ProductRequest $request)
     {
         try {
@@ -48,6 +66,10 @@ class ProductController extends Controller
         }
     }
 
+    /**
+     * @param Product $product
+     * @return ProductResource|JsonResponse
+     */
     public function show(Product $product)
     {
         try {
@@ -60,6 +82,11 @@ class ProductController extends Controller
         }
     }
 
+    /**
+     * @param ProductRequest $request
+     * @param Product $product
+     * @return ProductResource|JsonResponse
+     */
     public function update(ProductRequest $request, Product $product)
     {
         try {
@@ -74,6 +101,10 @@ class ProductController extends Controller
         }
     }
 
+    /**
+     * @param Product $product
+     * @return JsonResponse
+     */
     public function destroy(Product $product)
     {
         try {
