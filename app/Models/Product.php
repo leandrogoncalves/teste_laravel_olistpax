@@ -14,4 +14,10 @@ class Product extends Model
         'name',
         'quantity'
     ];
+
+    public function setQuantityAttribute($value)
+    {
+        $currentValue = data_get($this->attributes, 'quantity');
+        data_set($this->attributes, 'quantity', $currentValue + $value);
+    }
 }

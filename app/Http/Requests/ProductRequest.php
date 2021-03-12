@@ -27,7 +27,7 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:products'
+            'name' => 'required',
         ];
     }
 
@@ -35,7 +35,6 @@ class ProductRequest extends FormRequest
     {
         return [
           'name.required'   => 'O campo nome é obrigatório',
-          'name.unique'     => 'O nome cadastrado já existe'
         ];
     }
 
