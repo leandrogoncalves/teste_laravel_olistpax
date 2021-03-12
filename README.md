@@ -52,6 +52,10 @@ Projeto de teste para a empresa OlistPax
 
 - Acesse http://localhost:8081
 
+## Documentação da Api
+
+- Acesse http://localhost:8081/api/documentation
+
 ## Testes
 
 1. Acesse a pasta do projeto: `cd php_teste_olistpax`

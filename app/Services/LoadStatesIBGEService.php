@@ -31,6 +31,7 @@ class LoadStatesIBGEService
 
             $output = true;
         } catch (\Exception $e){
+            dd( $e);
             Log::error($e->getMessage());
         }
 

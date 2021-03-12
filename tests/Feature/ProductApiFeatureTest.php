@@ -21,7 +21,7 @@ class ProductApiFeatureTest extends TestCase
      */
     public function testGetAllProductsByApi()
     {
-        $response = $this->get(route('product.index'));
+        $response = $this->get(route('api.products.index'));
 
         $response
             ->assertStatus(200)
@@ -44,7 +44,7 @@ class ProductApiFeatureTest extends TestCase
      */
     public function testStoreProductsByApi()
     {
-        $response = $this->post(route('product.store'),[
+        $response = $this->post(route('api.products.store'),[
             "name" => "Sabote sem marca ",
             "quantity" => 10
         ]);
@@ -68,7 +68,7 @@ class ProductApiFeatureTest extends TestCase
      */
     public function testGetProductsByIdApi()
     {
-        $response = $this->get(route('product.show',1));
+        $response = $this->get(route('api.products.show',1));
 
         $response
             ->assertStatus(200)
@@ -89,7 +89,7 @@ class ProductApiFeatureTest extends TestCase
      */
     public function testUpdateProductsByApi()
     {
-        $response = $this->put(route('product.update', 1),[
+        $response = $this->put(route('api.products.update', 1),[
             "name" => "Sabote com marca ",
             "quantity" => 5
         ]);
@@ -113,7 +113,7 @@ class ProductApiFeatureTest extends TestCase
      */
     public function testDeleteProductsByIdApi()
     {
-        $response = $this->delete(route('product.destroy',1));
+        $response = $this->delete(route('api.products.destroy',1));
 
         $response
             ->assertStatus(200)

@@ -19,4 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('product', ProductController::class);
+Route::group([
+    'prefix' => 'v1',
+    'as' => 'api.',
+], function () {
+    Route::apiResource('products', ProductController::class);
+});
